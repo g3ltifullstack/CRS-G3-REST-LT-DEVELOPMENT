@@ -1,0 +1,271 @@
+package com.lt.DAO;
+
+import org.apache.log4j.Logger;
+
+import com.lt.bean.Admin;
+import com.lt.bean.Student;
+import com.lt.bean.User;
+import com.lt.constants.SQLConstantQueries;
+import com.lt.exception.StudentNotFoundForApprovalException;
+import com.lt.utils.DBUtil;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class AdminDAOImpl implements AdminDAOInterface {
+	private static Logger logger = Logger.getLogger(AdminDAOImpl.class);
+
+	@Override
+	public User validateUser(String username, String pass) {
+		// Step 2
+		// Declare the Connection or prepared statement variable here
+		Connection conn = null;
+		PreparedStatement stmt = null;
+
+		try {
+
+			// // Step 3 Register Driver here and create connection and Step 4 make/open a
+			// connection
+
+			logger.info("Connecting to database...");
+			conn = DBUtil.getConnection();
+
+			// STEP 4: Execute a query
+			System.out.println("Creating statement...");
+
+			// Declaring prepared statement
+			stmt = conn.prepareStatement(SQLConstantQueries.VALIDATE_USER);
+			stmt.setString(1, username);
+			stmt.setString(2, pass);
+			// STEP 5: Extract data from result set
+
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				User checkeduser = new User();
+				checkeduser.setUserId(rs.getInt("userid"));
+				checkeduser.setRoleId(rs.getInt("rollid"));
+
+				return checkeduser;
+			}
+
+		} catch (SQLException ex) {
+			ex.getMessage();
+		}
+		logger.info("Goodbye!");
+		return null;
+	}
+
+	// * // fetch admin from admin database against admin Id
+	@Override
+	public Admin fetchAdmin(int adminid) {
+
+		Connection connection = DBUtil.getConnection();
+		PreparedStatement stmt = null;
+
+		try {
+			// Declaring prepared statement
+			stmt = null;
+			stmt = connection.prepareStatement(SQLConstantQueries.FETCH_ADMIN);
+			stmt.setInt(1, adminid);
+
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				Admin admin = new Admin();
+				admin.setAdminId(adminid);
+				admin.setName(rs.getString("name"));
+				admin.setPhoneNumber(rs.getLong("phonenumber"));
+				admin.setGender(rs.getString("gender"));
+
+				return admin;
+			}
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+
+		return null;
+	}
+
+	// create a new admin
+	@Override
+	public void createAdmin(Admin admin) {
+
+		// Establishing the connection
+		System.out.println("establishing connection");
+		Connection connection = DBUtil.getConnection();
+		PreparedStatement stmt = null;
+
+		try {
+			// Declaring prepared statement and executing query
+			stmt = connection.prepareStatement(SQLConstantQueries.INSERT_ADMIN);
+			int adminid = admin.getAdminId();
+			String name = admin.getName();
+			String gender = admin.getGender();
+			long phoneNo = admin.getPhoneNumber();
+			int userid = admin.getUserid();
+
+			stmt.setInt(1, adminid);
+			stmt.setString(2, name);
+			stmt.setString(3, gender);
+			stmt.setLong(4, phoneNo);
+			stmt.setInt(5, userid);
+
+			// Executing query
+			stmt.executeUpdate();
+			logger.info(("Admin" + " added!"));
+
+		} catch (SQLException ex) {
+			ex.getMessage();
+		}
+	}
+
+	// update admin against adminId
+	@Override
+	public void updateAdmin(int adminID, Admin admin) {
+
+		// Establishing the connection
+		Connection connection = DBUtil.getConnection();
+		PreparedStatement stmt = null;
+
+		try {
+			// Declaring prepared statement and executing query
+			stmt = connection.prepareStatement(SQLConstantQueries.UPDATE_ADMIN);
+			int adminid = admin.getAdminId();
+			String name = admin.getName();
+			long phoneNo = admin.getPhoneNumber();
+			String gender = admin.getGender();
+
+			stmt.setString(1, name);
+			stmt.setString(2, gender);
+			stmt.setLong(3, phoneNo);
+			stmt.setInt(4, adminid);
+
+			// Executing query
+			stmt.executeUpdate();
+			System.out.println(("Admin details updated !"));
+
+		} catch (SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+
+	}
+
+	@Override
+	public List<Admin> displayAdmins() {
+
+		Connection connection = DBUtil.getConnection();
+		PreparedStatement stmt = null;
+
+		try {
+			stmt = connection.prepareStatement(SQLConstantQueries.DISPLAY_ADMINS);
+
+			ResultSet rs = stmt.executeQuery();
+
+			List<Admin> list = new ArrayList<Admin>();
+
+			// Creating ArrayList of admin
+			while (rs.next()) {
+				Admin admin = new Admin();
+				admin.setAdminId(rs.getInt("AdminID"));
+				admin.setName(rs.getString("Name"));
+				admin.setPhoneNumber(rs.getLong("PhoneNumber"));
+				admin.setGender(rs.getString("Gender"));
+
+				list.add(admin);
+
+			}
+
+			// returning list of admins
+			return list;
+		} catch (SQLException ex) {
+			ex.getMessage();
+		}
+
+		return null;
+	}
+
+	/**
+	 * Approve Student using SQL commands
+	 * 
+	 * @param studentId
+	 * @throws StudentNotFoundException
+	 * 
+	 */
+	@Override
+	public void approveStudent(int studentId) throws StudentNotFoundForApprovalException {
+
+		Connection connection = DBUtil.getConnection();
+		PreparedStatement stmt = null;
+		try {
+			String sql = SQLConstantQueries.APPROVE_STUDENT_QUERY;
+			stmt = connection.prepareStatement(sql);
+
+			stmt.setInt(1, studentId);
+			int row = stmt.executeUpdate();
+
+			logger.info(row + " student approved.");
+			if (row == 0) {
+				logger.error("Student with studentId: " + studentId + " not found.");
+				throw new StudentNotFoundForApprovalException(studentId);
+			}
+
+			logger.info("Student with studentId: " + studentId + " approved by admin.");
+
+		} catch (SQLException se) {
+
+			logger.error(se.getMessage());
+
+		}
+
+	}
+
+	/**
+	 * Fetch Students yet to approved using SQL commands
+	 * 
+	 * @return List of Students yet to approved
+	 */
+	@Override
+	public List<Student> displayAwaitingAdmissionOfStudents() {
+		Connection connection = DBUtil.getConnection();
+
+		PreparedStatement stmt = null;
+		List<Student> userList = new ArrayList<Student>();
+		try {
+
+			String sql = SQLConstantQueries.VIEW_PENDING_ADMISSION_QUERY;
+			stmt = connection.prepareStatement(sql);
+			ResultSet resultSet = stmt.executeQuery();
+
+			while (resultSet.next()) {
+
+				Student user = new Student();
+				user.setStudentId(resultSet.getInt(1));
+				user.setName(resultSet.getString(2));
+				user.setGender(resultSet.getString(3));
+				user.setPhoneNumber(resultSet.getInt(4));
+				user.setSemester(resultSet.getInt(5));
+				user.setBranch(resultSet.getString(6));
+				user.setUserId(resultSet.getInt(7));
+
+				userList.add(user);
+
+			}
+
+			logger.info(userList.size() + " students have pending-approval.");
+
+		} catch (SQLException se) {
+
+			logger.error(se.getMessage());
+
+		}
+
+		return userList;
+
+	}
+
+}

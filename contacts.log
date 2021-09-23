@@ -1,0 +1,245 @@
+16:41:11,905 DEBUG ProfessorImplService,http-nio-9092-exec-1:29 - professor bussiness logic
+16:43:14,802 DEBUG ProfessorImplService,http-nio-9092-exec-1:29 - professor bussiness logic
+16:45:04,842 DEBUG ProfessorImplService,http-nio-9092-exec-1:29 - professor bussiness logic
+16:46:35,720 DEBUG ProfessorImplService,http-nio-9092-exec-1:29 - professor bussiness logic
+16:50:31,976 DEBUG ProfessorImplService,http-nio-9092-exec-1:28 - professor bussiness logic
+16:50:31,983  WARN ProfessorImplService,http-nio-9092-exec-1:29 - 15
+16:50:31,988 DEBUG ProfessorImplService,http-nio-9092-exec-1:30 - professor bussiness logic
+16:50:31,989  WARN UserController,http-nio-9092-exec-1:69 - student details
+18:05:14,870 DEBUG ProfessorImplService,http-nio-9092-exec-1:28 - professor bussiness logic
+18:05:14,876 DEBUG ProfessorImplService,http-nio-9092-exec-1:30 - professor bussiness logic
+18:05:14,879 DEBUG ProfessorImplService,http-nio-9092-exec-1:33 - professor bussiness logic
+18:06:09,887 DEBUG ProfessorImplService,http-nio-9092-exec-3:28 - professor bussiness logic
+18:06:09,888 DEBUG ProfessorImplService,http-nio-9092-exec-3:30 - professor bussiness logic
+18:06:09,892 DEBUG ProfessorImplService,http-nio-9092-exec-3:33 - professor bussiness logic
+18:09:02,948 DEBUG ProfessorImplService,http-nio-9092-exec-1:28 - professor bussiness logic
+18:09:02,978 DEBUG ProfessorImplService,http-nio-9092-exec-1:30 - professor bussiness logic
+18:09:02,981 DEBUG ProfessorImplService,http-nio-9092-exec-1:33 - professor bussiness logic
+18:09:02,982 DEBUG ProfessorImplService,http-nio-9092-exec-1:35 - com.lt.DAO.ProfessorDAOImpl@36147e29
+18:09:02,984 DEBUG ProfessorImplService,http-nio-9092-exec-1:36 - professor bussiness logic
+18:18:28,866 DEBUG ProfessorImplService,http-nio-9092-exec-1:29 - professor bussiness logic
+18:18:28,874 DEBUG ProfessorImplService,http-nio-9092-exec-1:31 - professor bussiness logic
+18:18:28,875 DEBUG ProfessorImplService,http-nio-9092-exec-1:34 - professor bussiness logic
+18:19:20,062 DEBUG ProfessorImplService,http-nio-9092-exec-1:36 - com.lt.DAO.ProfessorDAOImpl@3878f8da
+18:19:22,475 DEBUG ProfessorImplService,http-nio-9092-exec-1:37 - professor bussiness logic
+18:22:53,791 DEBUG ProfessorImplService,http-nio-9092-exec-1:30 - professor bussiness logic
+18:22:53,796 DEBUG ProfessorImplService,http-nio-9092-exec-1:32 - professor bussiness logic
+18:22:53,801 DEBUG ProfessorImplService,http-nio-9092-exec-1:35 - professor bussiness logic
+18:22:59,798 DEBUG ProfessorImplService,http-nio-9092-exec-1:37 - com.lt.DAO.ProfessorDAOImpl@3f3733bb
+18:23:00,722 DEBUG ProfessorImplService,http-nio-9092-exec-1:38 - professor bussiness logic
+18:24:10,216 DEBUG ProfessorImplService,http-nio-9092-exec-1:30 - professor bussiness logic
+18:24:10,224 DEBUG ProfessorImplService,http-nio-9092-exec-1:32 - professor bussiness logic
+18:24:10,226 DEBUG ProfessorImplService,http-nio-9092-exec-1:35 - professor bussiness logic
+18:24:27,419 DEBUG ProfessorImplService,http-nio-9092-exec-1:37 - com.lt.DAO.ProfessorDAOImpl@4d5c7713
+18:24:29,442 DEBUG ProfessorImplService,http-nio-9092-exec-1:38 - professor bussiness logic
+18:29:15,612  INFO ProfessorImplService,http-nio-9092-exec-1:33 - below showing registred student details
+18:31:25,950 DEBUG ProfessorImplService,http-nio-9092-exec-1:33 - in professor bussiness logic
+18:31:41,606 DEBUG ProfessorImplService,http-nio-9092-exec-4:33 - in professor bussiness logic
+18:35:53,864 DEBUG ProfessorImplService,http-nio-9092-exec-1:33 - in professor bussiness logic
+18:46:14,977 DEBUG ProfessorImplService,http-nio-9092-exec-1:33 - in professor bussiness logic
+18:46:15,059  WARN ProfessorDAOImpl,http-nio-9092-exec-1:49 - Professor dao classes
+18:46:15,211  WARN ProfessorDAOImpl,http-nio-9092-exec-1:59 - resultset executed
+18:46:15,212  INFO ProfessorImplService,http-nio-9092-exec-1:35 - below showing registred student details
+18:46:15,214  INFO ProfessorImplService,http-nio-9092-exec-1:39 - student id-->101 student name-->akhilesh gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:46:15,215  INFO ProfessorImplService,http-nio-9092-exec-1:39 - student id-->102 student name-->Srinivas gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:46:15,218  INFO ProfessorImplService,http-nio-9092-exec-1:39 - student id-->103 student name-->Akshya gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:46:15,219  INFO ProfessorImplService,http-nio-9092-exec-1:39 - student id-->104 student name-->Amit gender-->malesemester-->2 branch-->Java phonenumber-->8269117403
+18:46:15,220  WARN UserController,http-nio-9092-exec-1:67 - student details
+18:49:43,893 DEBUG ProfessorImplService,http-nio-9092-exec-4:33 - in professor bussiness logic
+18:49:43,895  WARN ProfessorDAOImpl,http-nio-9092-exec-4:49 - Professor dao classes
+18:49:43,900  WARN ProfessorDAOImpl,http-nio-9092-exec-4:59 - resultset executed
+18:49:43,903  INFO ProfessorImplService,http-nio-9092-exec-4:35 - below showing registred student details
+18:49:43,905  INFO ProfessorImplService,http-nio-9092-exec-4:39 - student id-->101 student name-->akhilesh gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:49:43,907  INFO ProfessorImplService,http-nio-9092-exec-4:39 - student id-->102 student name-->Srinivas gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:49:43,909  INFO ProfessorImplService,http-nio-9092-exec-4:39 - student id-->103 student name-->Akshya gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:49:43,911  INFO ProfessorImplService,http-nio-9092-exec-4:39 - student id-->104 student name-->Amit gender-->malesemester-->2 branch-->Java phonenumber-->8269117403
+18:49:43,913  WARN UserController,http-nio-9092-exec-4:67 - student details
+18:55:49,875 DEBUG ProfessorImplService,http-nio-9092-exec-1:33 - in professor bussiness logic
+18:55:49,908  WARN ProfessorDAOImpl,http-nio-9092-exec-1:49 - Professor dao classes
+18:55:49,975  WARN ProfessorDAOImpl,http-nio-9092-exec-1:59 - resultset executed
+18:55:49,976  INFO ProfessorImplService,http-nio-9092-exec-1:35 - below showing registred student details
+18:55:49,977  INFO ProfessorImplService,http-nio-9092-exec-1:39 - student id-->101 student name-->akhilesh gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:55:49,978  INFO ProfessorImplService,http-nio-9092-exec-1:39 - student id-->102 student name-->Srinivas gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:55:49,980  INFO ProfessorImplService,http-nio-9092-exec-1:39 - student id-->103 student name-->Akshya gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:55:49,981  INFO ProfessorImplService,http-nio-9092-exec-1:39 - student id-->104 student name-->Amit gender-->malesemester-->2 branch-->Java phonenumber-->8269117403
+18:55:49,982  WARN UserController,http-nio-9092-exec-1:75 - student details
+18:58:53,876 DEBUG ProfessorImplService,http-nio-9092-exec-3:33 - in professor bussiness logic
+18:58:53,877  WARN ProfessorDAOImpl,http-nio-9092-exec-3:49 - Professor dao classes
+18:58:53,880  WARN ProfessorDAOImpl,http-nio-9092-exec-3:59 - resultset executed
+18:58:53,880  INFO ProfessorImplService,http-nio-9092-exec-3:35 - below showing registred student details
+18:58:53,881  INFO ProfessorImplService,http-nio-9092-exec-3:39 - student id-->101 student name-->akhilesh gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:58:53,882  INFO ProfessorImplService,http-nio-9092-exec-3:39 - student id-->102 student name-->Srinivas gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:58:53,882  INFO ProfessorImplService,http-nio-9092-exec-3:39 - student id-->103 student name-->Akshya gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:58:53,884  INFO ProfessorImplService,http-nio-9092-exec-3:39 - student id-->104 student name-->Amit gender-->malesemester-->2 branch-->Java phonenumber-->8269117403
+18:58:53,885  WARN UserController,http-nio-9092-exec-3:75 - student details
+18:59:34,293 DEBUG ProfessorImplService,http-nio-9092-exec-4:33 - in professor bussiness logic
+18:59:34,294  WARN ProfessorDAOImpl,http-nio-9092-exec-4:49 - Professor dao classes
+18:59:34,295  WARN ProfessorDAOImpl,http-nio-9092-exec-4:59 - resultset executed
+18:59:34,296  INFO ProfessorImplService,http-nio-9092-exec-4:35 - below showing registred student details
+18:59:34,297  INFO ProfessorImplService,http-nio-9092-exec-4:39 - student id-->101 student name-->akhilesh gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:59:34,297  INFO ProfessorImplService,http-nio-9092-exec-4:39 - student id-->102 student name-->Srinivas gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:59:34,298  INFO ProfessorImplService,http-nio-9092-exec-4:39 - student id-->103 student name-->Akshya gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:59:34,298  INFO ProfessorImplService,http-nio-9092-exec-4:39 - student id-->104 student name-->Amit gender-->malesemester-->2 branch-->Java phonenumber-->8269117403
+18:59:34,299  WARN UserController,http-nio-9092-exec-4:75 - student details
+18:59:51,996 DEBUG ProfessorImplService,http-nio-9092-exec-5:33 - in professor bussiness logic
+18:59:51,997  WARN ProfessorDAOImpl,http-nio-9092-exec-5:49 - Professor dao classes
+18:59:51,999  WARN ProfessorDAOImpl,http-nio-9092-exec-5:59 - resultset executed
+18:59:52,002  INFO ProfessorImplService,http-nio-9092-exec-5:35 - below showing registred student details
+18:59:52,003  INFO ProfessorImplService,http-nio-9092-exec-5:39 - student id-->101 student name-->akhilesh gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:59:52,003  INFO ProfessorImplService,http-nio-9092-exec-5:39 - student id-->102 student name-->Srinivas gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:59:52,004  INFO ProfessorImplService,http-nio-9092-exec-5:39 - student id-->103 student name-->Akshya gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+18:59:52,004  INFO ProfessorImplService,http-nio-9092-exec-5:39 - student id-->104 student name-->Amit gender-->malesemester-->2 branch-->Java phonenumber-->8269117403
+18:59:52,005  WARN UserController,http-nio-9092-exec-5:75 - student details
+19:00:12,735 DEBUG ProfessorImplService,http-nio-9092-exec-6:33 - in professor bussiness logic
+19:00:12,735  WARN ProfessorDAOImpl,http-nio-9092-exec-6:49 - Professor dao classes
+19:00:12,737  WARN ProfessorDAOImpl,http-nio-9092-exec-6:59 - resultset executed
+19:00:12,737  INFO ProfessorImplService,http-nio-9092-exec-6:35 - below showing registred student details
+19:00:12,738  INFO ProfessorImplService,http-nio-9092-exec-6:39 - student id-->101 student name-->akhilesh gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:00:12,738  INFO ProfessorImplService,http-nio-9092-exec-6:39 - student id-->102 student name-->Srinivas gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:00:12,738  INFO ProfessorImplService,http-nio-9092-exec-6:39 - student id-->103 student name-->Akshya gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:00:12,739  INFO ProfessorImplService,http-nio-9092-exec-6:39 - student id-->104 student name-->Amit gender-->malesemester-->2 branch-->Java phonenumber-->8269117403
+19:00:12,739  WARN UserController,http-nio-9092-exec-6:75 - student details
+19:06:59,896 DEBUG ProfessorImplService,http-nio-9092-exec-8:33 - in professor bussiness logic
+19:06:59,898  WARN ProfessorDAOImpl,http-nio-9092-exec-8:49 - Professor dao classes
+19:06:59,900  WARN ProfessorDAOImpl,http-nio-9092-exec-8:59 - resultset executed
+19:06:59,901  INFO ProfessorImplService,http-nio-9092-exec-8:35 - below showing registred student details
+19:06:59,901  INFO ProfessorImplService,http-nio-9092-exec-8:39 - student id-->101 student name-->akhilesh gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:06:59,902  INFO ProfessorImplService,http-nio-9092-exec-8:39 - student id-->102 student name-->Srinivas gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:06:59,902  INFO ProfessorImplService,http-nio-9092-exec-8:39 - student id-->103 student name-->Akshya gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:06:59,903  INFO ProfessorImplService,http-nio-9092-exec-8:39 - student id-->104 student name-->Amit gender-->malesemester-->2 branch-->Java phonenumber-->8269117403
+19:06:59,903  WARN UserController,http-nio-9092-exec-8:75 - student details
+19:07:59,768 DEBUG ProfessorImplService,http-nio-9092-exec-1:33 - in professor bussiness logic
+19:07:59,814  WARN ProfessorDAOImpl,http-nio-9092-exec-1:49 - Professor dao classes
+19:07:59,901  WARN ProfessorDAOImpl,http-nio-9092-exec-1:59 - resultset executed
+19:07:59,903  INFO ProfessorImplService,http-nio-9092-exec-1:35 - below showing registred student details
+19:08:00,007  INFO ProfessorImplService,http-nio-9092-exec-1:40 - student id-->101 student name-->akhilesh gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:08:00,010  INFO ProfessorImplService,http-nio-9092-exec-1:40 - student id-->102 student name-->Srinivas gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:08:00,011  INFO ProfessorImplService,http-nio-9092-exec-1:40 - student id-->103 student name-->Akshya gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:08:00,012  INFO ProfessorImplService,http-nio-9092-exec-1:40 - student id-->104 student name-->Amit gender-->malesemester-->2 branch-->Java phonenumber-->8269117403
+19:08:00,013  WARN UserController,http-nio-9092-exec-1:77 - student details--->0
+19:09:25,168 DEBUG ProfessorImplService,http-nio-9092-exec-3:33 - in professor bussiness logic
+19:09:25,169  WARN ProfessorDAOImpl,http-nio-9092-exec-3:49 - Professor dao classes
+19:09:25,174  WARN ProfessorDAOImpl,http-nio-9092-exec-3:59 - resultset executed
+19:09:25,176  INFO ProfessorImplService,http-nio-9092-exec-3:35 - below showing registred student details
+19:09:25,177  INFO ProfessorImplService,http-nio-9092-exec-3:40 - student id-->101 student name-->akhilesh gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:09:25,177  INFO ProfessorImplService,http-nio-9092-exec-3:40 - student id-->102 student name-->Srinivas gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:09:25,178  INFO ProfessorImplService,http-nio-9092-exec-3:40 - student id-->103 student name-->Akshya gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:09:25,179  INFO ProfessorImplService,http-nio-9092-exec-3:40 - student id-->104 student name-->Amit gender-->malesemester-->2 branch-->Java phonenumber-->8269117403
+19:09:25,179  WARN UserController,http-nio-9092-exec-3:77 - student details--->0
+19:09:27,926 DEBUG ProfessorImplService,http-nio-9092-exec-4:33 - in professor bussiness logic
+19:09:27,927  WARN ProfessorDAOImpl,http-nio-9092-exec-4:49 - Professor dao classes
+19:09:27,928  WARN ProfessorDAOImpl,http-nio-9092-exec-4:59 - resultset executed
+19:09:27,929  INFO ProfessorImplService,http-nio-9092-exec-4:35 - below showing registred student details
+19:09:27,930  INFO ProfessorImplService,http-nio-9092-exec-4:40 - student id-->101 student name-->akhilesh gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:09:27,931  INFO ProfessorImplService,http-nio-9092-exec-4:40 - student id-->102 student name-->Srinivas gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:09:27,932  INFO ProfessorImplService,http-nio-9092-exec-4:40 - student id-->103 student name-->Akshya gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+19:09:27,933  INFO ProfessorImplService,http-nio-9092-exec-4:40 - student id-->104 student name-->Amit gender-->malesemester-->2 branch-->Java phonenumber-->8269117403
+19:09:27,934  WARN UserController,http-nio-9092-exec-4:77 - student details--->0
+19:12:53,977 ERROR UserImplService,http-nio-9092-exec-1:30 - not verifiednull
+19:33:13,258 ERROR UserImplService,http-nio-9092-exec-1:30 - not verifiednull
+19:33:23,337 ERROR UserImplService,http-nio-9092-exec-2:30 - not verifiednull
+19:33:48,958 ERROR UserImplService,http-nio-9092-exec-3:30 - not verifiednull
+19:36:04,850 ERROR UserImplService,http-nio-9092-exec-5:30 - not verifiednull
+19:36:33,885 ERROR UserImplService,http-nio-9092-exec-1:30 - not verifiednull
+19:37:34,142  WARN UserController,http-nio-9092-exec-1:38 - user controller method user and password getting
+19:37:34,237 ERROR UserImplService,http-nio-9092-exec-1:30 - not verifiednull
+19:37:34,238  WARN UserController,http-nio-9092-exec-1:42 - after calling method password getting
+19:51:02,527  WARN UserController,http-nio-9092-exec-1:38 - user controller method user and password getting
+19:51:02,654 ERROR UserImplService,http-nio-9092-exec-1:30 - not verifiednull
+19:51:02,655  WARN UserController,http-nio-9092-exec-1:42 - after calling method password getting
+19:57:20,003  WARN UserController,http-nio-9092-exec-1:38 - user controller method user and password getting
+19:57:20,007 DEBUG UserImplService,http-nio-9092-exec-1:24 - calling valodation of dao 
+19:57:20,127 DEBUG UserImplService,http-nio-9092-exec-1:26 - in user impl service 
+19:57:20,128 ERROR UserImplService,http-nio-9092-exec-1:32 - not verifiednull
+19:57:20,129  WARN UserController,http-nio-9092-exec-1:42 - after calling method password getting
+19:59:52,923  WARN UserController,http-nio-9092-exec-1:38 - user controller method user and password getting username-->null
+19:59:52,930  WARN UserController,http-nio-9092-exec-1:39 - user controller method user and password getting password-->null
+19:59:52,933 DEBUG UserImplService,http-nio-9092-exec-1:24 - calling valodation of dao 
+19:59:53,029 DEBUG UserImplService,http-nio-9092-exec-1:26 - in user impl service 
+19:59:53,033 ERROR UserImplService,http-nio-9092-exec-1:32 - not verifiednull
+19:59:53,034  WARN UserController,http-nio-9092-exec-1:43 - after calling method password getting
+20:02:13,396  WARN UserController,http-nio-9092-exec-3:38 - user controller method user and password getting username-->null
+20:02:13,398  WARN UserController,http-nio-9092-exec-3:39 - user controller method user and password getting password-->null
+20:02:13,398 DEBUG UserImplService,http-nio-9092-exec-3:24 - calling valodation of dao 
+20:02:13,401 DEBUG UserImplService,http-nio-9092-exec-3:26 - in user impl service 
+20:02:13,402 ERROR UserImplService,http-nio-9092-exec-3:32 - not verifiednull
+20:02:13,402  WARN UserController,http-nio-9092-exec-3:43 - after calling method password getting
+20:10:34,187  WARN UserController,http-nio-9092-exec-5:38 - user controller method user and password getting username-->null
+20:10:34,188  WARN UserController,http-nio-9092-exec-5:39 - user controller method user and password getting password-->null
+20:10:34,188 DEBUG UserImplService,http-nio-9092-exec-5:24 - calling valodation of dao 
+20:10:34,190 DEBUG UserImplService,http-nio-9092-exec-5:26 - in user impl service 
+20:10:34,191 ERROR UserImplService,http-nio-9092-exec-5:32 - not verifiednull
+20:10:34,191  WARN UserController,http-nio-9092-exec-5:43 - after calling method password getting
+20:13:01,155  WARN UserController,http-nio-9092-exec-7:38 - user controller method user and password getting username-->null
+20:13:01,156  WARN UserController,http-nio-9092-exec-7:39 - user controller method user and password getting password-->null
+20:13:01,157 DEBUG UserImplService,http-nio-9092-exec-7:24 - calling valodation of dao 
+20:13:01,160 DEBUG UserImplService,http-nio-9092-exec-7:26 - in user impl service 
+20:13:01,161 ERROR UserImplService,http-nio-9092-exec-7:32 - not verifiednull
+20:13:01,161  WARN UserController,http-nio-9092-exec-7:43 - after calling method password getting
+20:15:33,081  WARN UserController,http-nio-9092-exec-1:40 - user controller method user and password getting username-->akhilesh
+20:15:33,085  WARN UserController,http-nio-9092-exec-1:41 - user controller method user and password getting password-->akhil
+20:15:33,089 DEBUG UserImplService,http-nio-9092-exec-1:24 - calling valodation of dao 
+20:15:33,178  WARN UserDAOImpl,http-nio-9092-exec-1:37 - resultset executed if block 
+20:15:33,190 DEBUG UserImplService,http-nio-9092-exec-1:26 - in user impl service 
+20:15:33,196 DEBUG UserImplService,http-nio-9092-exec-1:28 -  user validatedcom.lt.bean.User@280dd4a4
+20:15:33,197  WARN UserImplService,http-nio-9092-exec-1:29 - com.lt.bean.User@280dd4a4
+20:15:33,198  WARN UserController,http-nio-9092-exec-1:45 - after calling method password getting
+10:48:35,860  WARN UserController,http-nio-9092-exec-1:40 - user controller method user and password getting username-->null
+10:48:35,883  WARN UserController,http-nio-9092-exec-1:41 - user controller method user and password getting password-->null
+10:48:35,883 DEBUG UserImplService,http-nio-9092-exec-1:24 - calling valodation of dao 
+10:48:36,079 DEBUG UserImplService,http-nio-9092-exec-1:26 - in user impl service 
+10:48:36,080 ERROR UserImplService,http-nio-9092-exec-1:32 - not verifiednull
+10:48:36,081  WARN UserController,http-nio-9092-exec-1:45 - after calling method password getting
+10:51:38,857  WARN UserController,http-nio-9092-exec-3:40 - user controller method user and password getting username-->akhilesh
+10:51:38,860  WARN UserController,http-nio-9092-exec-3:41 - user controller method user and password getting password-->akhil
+10:51:38,861 DEBUG UserImplService,http-nio-9092-exec-3:24 - calling valodation of dao 
+10:51:38,863  WARN UserDAOImpl,http-nio-9092-exec-3:37 - resultset executed if block 
+10:51:38,864 DEBUG UserImplService,http-nio-9092-exec-3:26 - in user impl service 
+10:51:38,865 DEBUG UserImplService,http-nio-9092-exec-3:28 -  user validatedcom.lt.bean.User@2e7e789a
+10:51:38,865  WARN UserImplService,http-nio-9092-exec-3:29 - com.lt.bean.User@2e7e789a
+10:51:38,866  WARN UserController,http-nio-9092-exec-3:45 - after calling method password getting
+13:59:02,283  WARN UserRestApi,http-nio-9092-exec-1:73 - user controller method user and password getting username-->akhilesh
+13:59:02,286  WARN UserRestApi,http-nio-9092-exec-1:74 - user controller method user and password getting password-->akhil
+14:02:11,316  WARN UserRestApi,http-nio-9092-exec-3:73 - user controller method user and password getting username-->null
+14:02:11,318  WARN UserRestApi,http-nio-9092-exec-3:74 - user controller method user and password getting password-->null
+14:11:43,276  WARN UserRestApi,http-nio-9092-exec-5:73 - user controller method user and password getting username-->null
+14:11:43,278  WARN UserRestApi,http-nio-9092-exec-5:74 - user controller method user and password getting password-->null
+14:14:17,207  WARN UserRestApi,http-nio-9092-exec-1:73 - user controller method user and password getting username-->akhileshg
+14:14:17,224  WARN UserRestApi,http-nio-9092-exec-1:74 - user controller method user and password getting password-->akg
+14:14:17,234 DEBUG UserImplService,http-nio-9092-exec-1:106 - inside user service impl
+14:26:32,624  WARN UserRestApi,http-nio-9092-exec-1:73 - user controller method user and password getting username-->akhileshg
+14:26:32,629  WARN UserRestApi,http-nio-9092-exec-1:74 - user controller method user and password getting password-->akg
+14:26:32,631 DEBUG UserImplService,http-nio-9092-exec-1:106 - inside user service impl
+14:32:25,372  WARN UserRestApi,http-nio-9092-exec-1:73 - user controller method user and password getting username-->akhileshg
+14:32:25,381  WARN UserRestApi,http-nio-9092-exec-1:74 - user controller method user and password getting password-->akg
+14:32:25,385 DEBUG UserImplService,http-nio-9092-exec-1:106 - inside user service impl
+14:48:49,745  WARN UserRestApi,http-nio-9092-exec-1:73 - user controller method user and password getting username-->akhileshg
+14:48:49,755  WARN UserRestApi,http-nio-9092-exec-1:74 - user controller method user and password getting password-->akg
+14:48:49,765 DEBUG UserImplService,http-nio-9092-exec-1:106 - inside user service impl
+14:49:22,563  WARN UserDAOImpl,http-nio-9092-exec-1:147 - getting value inside user dao
+15:24:09,776 DEBUG ProfessorImplService,http-nio-9092-exec-1:33 - in professor bussiness logic
+15:24:09,868  WARN ProfessorDAOImpl,http-nio-9092-exec-1:49 - Professor dao classes
+15:24:09,955  WARN ProfessorDAOImpl,http-nio-9092-exec-1:59 - resultset executed
+15:24:09,956  INFO ProfessorImplService,http-nio-9092-exec-1:35 - below showing registred student details
+15:24:10,055  INFO ProfessorImplService,http-nio-9092-exec-1:40 - student id-->101 student name-->akhilesh gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+15:24:10,056  INFO ProfessorImplService,http-nio-9092-exec-1:40 - student id-->102 student name-->Srinivas gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+15:24:10,060  INFO ProfessorImplService,http-nio-9092-exec-1:40 - student id-->103 student name-->Akshya gender-->malesemester-->2 branch-->CSE phonenumber-->8269117483
+15:24:10,061  INFO ProfessorImplService,http-nio-9092-exec-1:40 - student id-->104 student name-->Amit gender-->malesemester-->2 branch-->Java phonenumber-->8269117403
+15:24:10,062  INFO ProfessorImplService,http-nio-9092-exec-1:40 - student id-->105 student name-->akhileshg gender-->Msemester-->2 branch-->CSE phonenumber-->52545555
+15:24:10,063  WARN UserRestApi,http-nio-9092-exec-1:42 - student details--->0
+15:49:45,617 ERROR GradeDAOImpl,http-nio-9092-exec-6:65 - java.sql.SQLIntegrityConstraintViolationException: ORA-01400: cannot insert NULL into ("DEVU"."GRADE"."GREDEID")
+
+15:53:47,568  WARN GradeDAOImpl,http-nio-9092-exec-1:53 - Grade inserted for student id-->102
+17:01:42,083 DEBUG ProfessorImplService,http-nio-9092-exec-1:66 - calling studentByName for getting data of akhileshg
+17:01:42,244  WARN ProfessorDAOImpl,http-nio-9092-exec-1:91 - going to execute resultset object
+17:01:42,309  WARN ProfessorDAOImpl,http-nio-9092-exec-1:93 - resultset executed resultset object
+17:01:42,445  INFO ProfessorImplService,http-nio-9092-exec-1:72 - student id-->105 student name-->akhileshg gender-->Msemester-->2 branch-->CSE phonenumber-->52545555
+17:33:38,816 DEBUG ProfessorImplService,http-nio-9092-exec-1:52 - calling studentByName for getting data of Amit
+17:33:38,980  WARN ProfessorDAOImpl,http-nio-9092-exec-1:133 - going to execute resultset object
+17:33:38,983  WARN ProfessorDAOImpl,http-nio-9092-exec-1:135 - resultset executed resultset object
+18:05:14,380 DEBUG ProfessorImplService,http-nio-9092-exec-3:52 - calling studentByName for getting data of Amit
+18:05:14,381  WARN ProfessorDAOImpl,http-nio-9092-exec-3:133 - going to execute resultset object
+18:05:14,383  WARN ProfessorDAOImpl,http-nio-9092-exec-3:135 - resultset executed resultset object
+18:06:01,506 DEBUG ProfessorImplService,http-nio-9092-exec-5:52 - calling studentByName for getting data of Amit
+18:06:01,507  WARN ProfessorDAOImpl,http-nio-9092-exec-5:133 - going to execute resultset object
+18:06:01,510  WARN ProfessorDAOImpl,http-nio-9092-exec-5:135 - resultset executed resultset object

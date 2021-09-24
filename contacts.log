@@ -243,3 +243,6 @@
 18:06:01,506 DEBUG ProfessorImplService,http-nio-9092-exec-5:52 - calling studentByName for getting data of Amit
 18:06:01,507  WARN ProfessorDAOImpl,http-nio-9092-exec-5:133 - going to execute resultset object
 18:06:01,510  WARN ProfessorDAOImpl,http-nio-9092-exec-5:135 - resultset executed resultset object
+11:22:20,126 DEBUG ProfessorImplService,http-nio-9092-exec-4:52 - calling studentByName for getting data of Amit
+11:22:20,314  WARN ProfessorDAOImpl,http-nio-9092-exec-4:133 - going to execute resultset object
+11:22:20,332  WARN ProfessorDAOImpl,http-nio-9092-exec-4:135 - resultset executed resultset object

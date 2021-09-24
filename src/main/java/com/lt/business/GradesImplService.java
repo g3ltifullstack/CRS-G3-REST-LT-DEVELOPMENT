@@ -31,8 +31,9 @@ public class GradesImplService  implements GradesInterface {
 	}
  
 	@Override
-	public void uploadGrades(Grade grade)  {
-		gradeDao.uploadGrades(grade);
+	public boolean uploadGrades(Grade grade)  {
+		//gradeDao.uploadGrades(grade);
+		return gradeDao.uploadGrades(grade);
 		
 
 		

@@ -11,6 +11,6 @@ public interface GradesInterface {
 //	public void displayGrades(List<String> listNumberOfStudentGrades);
 
 	public void displayGrades(Student student);
-	public void uploadGrades(Grade grade) ;
+	public boolean uploadGrades(Grade grade) ;
 
 }

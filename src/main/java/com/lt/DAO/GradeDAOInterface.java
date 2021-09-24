@@ -9,6 +9,6 @@ import com.lt.bean.Student;
 public interface GradeDAOInterface {
 	
 	public List<Course> displayGrades(Student student);
-	public void uploadGrades(Grade grade);
+	public boolean uploadGrades(Grade grade);
 
 }

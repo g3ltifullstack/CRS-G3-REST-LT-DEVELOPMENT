@@ -24,11 +24,12 @@ public class GradeDAOImpl implements GradeDAOInterface {
 	}
 
 	@Override
-	public void uploadGrades(Grade grade) {
+	public boolean uploadGrades(Grade grade) {
 
 		Connection connection = DBUtil.getConnection();
 		PreparedStatement stmt = null;
 		// GREAD_UPLOAD="INSERT INTO GRADE VALUES (?,?,?)";
+		boolean flag=false;
 		try {
 
 			// Declaring prepared statement
@@ -39,17 +40,12 @@ public class GradeDAOImpl implements GradeDAOInterface {
 			stmt.setString(3,grade.getGrade());
 			logger.debug("executing dao script--->");
 			int a=stmt.executeUpdate();
-			
-			//System.out.println(a);
-			//ResultSet rs = stmt.getGeneratedKeys();
-			
-			
 
 			try {
 				
 				if (a>0) {
 					
-					
+					flag=true;
 					logger.warn("Grade inserted for student id-->" + grade.getStudentId());
 					
 
@@ -65,6 +61,7 @@ public class GradeDAOImpl implements GradeDAOInterface {
 			//logger.error(ex.getMessage());
 			logger.error(ex);
 		}
+		return flag;
 		
 
 //		

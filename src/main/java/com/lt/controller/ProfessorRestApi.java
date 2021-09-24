@@ -27,11 +27,18 @@ public class ProfessorRestApi {
 	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.POST, value = "/gupload")
 
 	@ResponseBody
-	public void provideGread(@RequestBody Grade grade) {
+	public String provideGread(@RequestBody Grade grade) {
 		logger.debug("providing gread");
 		logger.debug("calling grade impl--->");
+		String sts=null;
 		GradesInterface gradeOperation= new GradesImplService();
-		gradeOperation.uploadGrades(grade);
+		boolean status=false;
+		status=gradeOperation.uploadGrades(grade);
+		if(status) {
+			logger.debug("login verified");
+			sts="login verified";
+		}
+		return sts;
 	
 	};
 

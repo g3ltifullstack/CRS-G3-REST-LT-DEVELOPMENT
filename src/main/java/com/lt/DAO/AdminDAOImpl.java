@@ -97,7 +97,8 @@ public class AdminDAOImpl implements AdminDAOInterface {
 
 	// create a new admin
 	@Override
-	public void createAdmin(Admin admin) {
+	public boolean createAdmin(Admin admin) {
+		boolean isCreated =false;
 
 		// Establishing the connection
 		System.out.println("establishing connection");
@@ -118,14 +119,15 @@ public class AdminDAOImpl implements AdminDAOInterface {
 			stmt.setString(3, gender);
 			stmt.setLong(4, phoneNo);
 			stmt.setInt(5, userid);
-
 			// Executing query
 			stmt.executeUpdate();
+			isCreated=true;
 			logger.info(("Admin" + " added!"));
 
 		} catch (SQLException ex) {
 			ex.getMessage();
 		}
+		return isCreated;
 	}
 
 	// update admin against adminId

@@ -39,8 +39,13 @@ import com.lt.bean.Admin;
 import com.lt.bean.Course;
 import com.lt.bean.Professor;
 import com.lt.bean.Student;
+import com.lt.bean.User;
 import com.lt.business.AdminImplService;
 import com.lt.business.AdminInterface;
+import com.lt.business.CourseImplService;
+import com.lt.business.CourseInterface;
+import com.lt.business.UserImplService;
+import com.lt.business.UserInterface;
 import com.lt.exception.CourseFoundException;
 import com.lt.exception.CourseNotFoundException;
 
@@ -49,6 +54,7 @@ import com.lt.exception.UserNotFoundException;
 import com.lt.DAO.AdminDAOInterface;
 import com.lt.DAO.CourseDAOImpl;
 import com.lt.DAO.CourseDAOInterface;
+import com.lt.DAO.UserDAOImpl;
 import com.lt.DAO.AdminDAOImpl;
 
 @RestController
@@ -58,21 +64,25 @@ public class AdminRestApi {
 	AdminDAOInterface adminOperation = new AdminDAOImpl();
 
 	/**
-	 * /admin/assignCourseToProfessor REST-service for assigning course to professor
 	 * 
 	 * @param courseCode
 	 * @param professorId
 	 * @return
 	 */
 
-	@PostMapping("/createadmin")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response createAdmin(@RequestBody Admin admin) throws SQLException {
+	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.POST, value = "/createadmin")
+	@ResponseBody
+	public String createAdmin(@RequestBody Admin admin) throws SQLException {
 
-		AdminDAOInterface adminDAO;
+		AdminInterface adminDAO1 = new AdminImplService();
 
-//		adminDAO.createAdmin(admin);
-		return Response.status(201).entity("admin id " + admin.getAdminId() + " admin name " + admin.getName()).build();
+		System.out.println("Print admin name -- " + admin.getName());
+		System.out.println("fetch admin");
+		boolean adminString = adminDAO1.createAdmin(admin);
+		if (adminString) {
+			return "created";
+		}
+		return "not created";
 	}
 
 	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.POST, value = "/fetchadmin")
@@ -86,10 +96,70 @@ public class AdminRestApi {
 		return adminString;
 	}
 
-	@RequestMapping("/hello")
+	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.POST, value = "/updateuser")
 	@ResponseBody
-	public String hello() {
-		return "Hello, world";
+	public String updateUser(@RequestBody User user) throws SQLException {
+
+		UserInterface adminDAO1 = new UserImplService();
+
+//		System.out.println("Print admin name -- " + admin.getName());
+		System.out.println("fetch admin");
+		boolean adminString = adminDAO1.updateUser(user);
+		if (adminString) {
+			return "updated";
+		}
+		return "not updated"; // add exception
+	}
+
+	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.POST, value = "/deleteuser")
+	@ResponseBody
+	public String deleteUser(@RequestBody User user) throws SQLException {
+
+		UserInterface adminDAO1 = new UserImplService();
+
+		boolean adminString = adminDAO1.deleteUser(user);
+		if (adminString) {
+			return "deleted";
+		}
+		return "not deleted"; // add exception
+	}
+
+	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.POST, value = "/displayadmin")
+	@ResponseBody
+	public String displayAdmins(@RequestBody Admin admin) throws SQLException {
+
+		UserInterface adminDAO1 = new UserImplService();
+
+		System.out.println("Print admin name -- " + admin.getName());
+		System.out.println("fetch admin");
+		String adminString = adminDAO1.displayAdmins(admin);
+		return adminString;
+	}
+
+	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.POST, value = "/insertcourse")
+	@ResponseBody
+	public String insertCourse(@RequestBody Course course) throws SQLException {
+
+		CourseInterface courseDAO = new CourseImplService();
+
+		boolean adminString = courseDAO.insertCourse(course);
+		if (adminString) {
+			return "inserted";
+		}
+		return "not inserted";
+	}
+
+	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.POST, value = "/deletecourse")
+	@ResponseBody
+	public String deleteCourse(@RequestBody Course course) throws SQLException {
+
+		CourseInterface courseDAO = new CourseImplService();
+
+		boolean adminString = courseDAO.deleteCourse(course);
+		if (adminString) {
+			return "deleted";
+		}
+		return "not deleted";
 	}
 
 }

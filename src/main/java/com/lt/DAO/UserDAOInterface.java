@@ -33,32 +33,34 @@ public interface UserDAOInterface {
 
 	public List<Professor> displayProfessors();
 
-	public void updateUser(int userId, User user);
+	public boolean updateUser(User user);
 
-	public List<Admin> displayAdmins();
+	public List<Admin> displayAdmins(Admin admin);
+	
+	public boolean deleteUser(User user);
 
-	// check delete user
-	default public void deleteUser(int userId, String query) {
-
-		// Establishing the connection
-		Connection connection = DBUtil.getConnection();
-		try {
-
-			// Establishing the connection
-			PreparedStatement stmt = null;
-
-			stmt = connection.prepareStatement(query);
-			stmt.setInt(1, userId);
-			// Executing query
-			int rs = stmt.executeUpdate();
-			if (rs > 0) {
-				return;
-			}
-//					else 
-//					throw new UserNotFoundException();
-
-		} catch (SQLException ex) {
-			ex.getMessage();
-		}
-	}
+//	// check delete user
+//	default public void deleteUser(int userId, String query) {
+//
+//		// Establishing the connection
+//		Connection connection = DBUtil.getConnection();
+//		try {
+//
+//			// Establishing the connection
+//			PreparedStatement stmt = null;
+//
+//			stmt = connection.prepareStatement(query);
+//			stmt.setInt(1, userId);
+//			// Executing query
+//			int rs = stmt.executeUpdate();
+//			if (rs > 0) {
+//				return;
+//			}
+////					else 
+////					throw new UserNotFoundException();
+//
+//		} catch (SQLException ex) {
+//			ex.getMessage();
+//		}
+//	}
 }

@@ -16,6 +16,7 @@ public interface AdminInterface {
 	public void dropCourse();
 	public List<Course> publishResult() throws IOException;
 	public String fetchAdmin(Admin admin);
+	public boolean createAdmin(Admin admin);
 //	public List<Course> viewCourses();
 
 }

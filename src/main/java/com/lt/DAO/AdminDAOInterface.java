@@ -16,7 +16,7 @@ public interface AdminDAOInterface {
 
 	public List<Admin> fetchAdmin(Admin admin);
 
-	public void createAdmin(Admin admin);
+	public boolean createAdmin(Admin admin);
 
 	public void updateAdmin(int adminID, Admin admin);
 	/**

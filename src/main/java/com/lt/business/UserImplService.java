@@ -1,5 +1,7 @@
 package com.lt.business;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import org.apache.log4j.Logger;
@@ -12,6 +14,9 @@ import com.lt.bean.Admin;
 import com.lt.bean.Professor;
 import com.lt.bean.Student;
 import com.lt.bean.User;
+
+import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
 
 public class UserImplService extends User implements UserInterface {
 	UserDAOInterface userDao = new UserDAOImpl();
@@ -48,9 +53,13 @@ public class UserImplService extends User implements UserInterface {
 
 	}
 
-	public void displayAdmins() {
-		// TODO Auto-generated method stub
-
+	public String displayAdmins(Admin admin) {
+		List<Admin> adminList = new ArrayList<>();
+		System.out.println("json");
+		adminList = userDao.displayAdmins(admin);
+		String jsonStr = JSONArray.toJSONString(adminList);
+		System.out.println("Print json string "+jsonStr);
+		return jsonStr;
 	}
 
 	public void signUp() {
@@ -88,5 +97,20 @@ public class UserImplService extends User implements UserInterface {
 
 		}
 		sc.close();
+	}
+
+	@Override
+	public boolean updateUser(User user) {
+		
+		System.out.println("json");
+		boolean adminList = userDao.updateUser(user);
+		return adminList;
+	}
+
+	@Override
+	public boolean deleteUser(User user) {
+		System.out.println("json");
+		boolean adminList = userDao.deleteUser(user);
+		return adminList;
 	}
 }

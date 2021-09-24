@@ -71,8 +71,26 @@ public class AdminImplService implements AdminInterface {
 		System.out.println("json");
 		adminList = adminDAO.fetchAdmin(admin);
 		String jsonStr = JSONArray.toJSONString(adminList);
-		System.out.println("Print json string "+jsonStr);
+		System.out.println("Print json string " + jsonStr);
 		return jsonStr;
+	}
+
+	@Override
+	public boolean createAdmin(Admin admin) {
+		System.out.println("json create admin");
+
+		boolean adminCreation1 = false;
+		try {
+			adminCreation1 = adminDAO.createAdmin(admin);
+			if (adminCreation1) {
+				logger.info("created ");
+
+			}
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return adminCreation1;
+
 	}
 
 }

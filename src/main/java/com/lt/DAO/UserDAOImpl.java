@@ -130,7 +130,8 @@ public class UserDAOImpl implements UserDAOInterface {
 	}
 
 	@Override
-	public void updateUser(int userId, User user) {
+	public boolean updateUser(User user) {
+		boolean isUpdated = false;
 		// Establishing the connection
 		Connection connection = DBUtil.getConnection();
 		PreparedStatement stmt = null;
@@ -151,30 +152,31 @@ public class UserDAOImpl implements UserDAOInterface {
 
 			// Executing query
 			stmt.executeUpdate();
-			logger.info("Updated the record");
+			isUpdated = true;
 
 		} catch (SQLException ex) {
 			ex.getMessage();
 		}
+		return isUpdated;
+
 	}
 
 	// provide details of all admins
 	@Override
-	public List<Admin> displayAdmins() {
+	public List<Admin> displayAdmins(Admin admin) {
 
 		Connection connection = DBUtil.getConnection();
 		PreparedStatement stmt = null;
+		List<Admin> list = new ArrayList<Admin>();
 
 		try {
 			stmt = connection.prepareStatement(SQLConstantQueries.DISPLAY_ADMINS);
 
 			ResultSet rs = stmt.executeQuery();
 
-			List<Admin> list = new ArrayList<Admin>();
 			logger.info("Display admins --");
 			// Creating ArrayList of admin
 			while (rs.next()) {
-				Admin admin = new Admin();
 				admin.setAdminId(rs.getInt("adminid"));
 				admin.setName(rs.getString("name"));
 				admin.setGender(rs.getString("gender"));
@@ -184,12 +186,11 @@ public class UserDAOImpl implements UserDAOInterface {
 			}
 
 			// returning list of admins
-			return list;
 		} catch (SQLException ex) {
 			ex.getMessage();
 		}
 
-		return null;
+		return list;
 	}
 
 	@Override
@@ -220,6 +221,33 @@ public class UserDAOImpl implements UserDAOInterface {
 	public List<Professor> displayProfessors() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean deleteUser(User user) {
+		// Establishing the connection
+		boolean isDeleted = false;
+		Connection connection = DBUtil.getConnection();
+		try {
+
+			// Establishing the connection
+			PreparedStatement stmt = null;
+
+			stmt = connection.prepareStatement(SQLConstantQueries.DELETE_USER);
+			stmt.setInt(1, user.getUserId());
+			// Executing query
+			int rs = stmt.executeUpdate();
+			if (rs > 0) {
+				isDeleted=true;
+				return isDeleted;
+			}
+//							else 
+//							throw new UserNotFoundException();
+
+		} catch (SQLException ex) {
+			ex.getMessage();
+		}
+		return isDeleted;
 	}
 
 }

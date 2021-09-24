@@ -26,14 +26,16 @@ public interface UserInterface {
 	/**
 	 * Display Admins
 	 */
-	public void displayAdmins();
+	public String displayAdmins(Admin admin);
 
 	/**
 	 * Login 
 	 */
 	public void login();	
 	public void signUp();
-	
+	public boolean updateUser(User user);
+	public boolean deleteUser(User user);
+
 	public void createStudent(Student student) ;
 	public  User createUser(String name, String password,int roleid);
 }

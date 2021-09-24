@@ -14,6 +14,7 @@ import com.lt.bean.Professor;
 import com.lt.bean.Student;
 import com.lt.bean.User;
 import com.lt.constants.SQLConstantQueries;
+import com.lt.exception.UserNotFoundException;
 import com.lt.utils.DBUtil;
 
 @Repository
@@ -33,7 +34,9 @@ public class UserDAOImpl implements UserDAOInterface {
 			stmt.setString(2,pass);
 			ResultSet rs = stmt.executeQuery();
 			 logger.debug("resultset executed for  validate user ");
-			if(rs.next() )
+			
+			 try {
+			 if(rs.next() )
 			{
 				 logger.warn("resultset executed if block ");
 				User checkeduser = new User();
@@ -45,14 +48,19 @@ public class UserDAOImpl implements UserDAOInterface {
 			}
 			else
 			{
-				System.out.println("Invalid User Credentials ! ");
-				return null;
+				 throw new UserNotFoundException("provide correct login credential");
 			}
 
-		} catch (SQLException ex) {
-			
+		} catch (UserNotFoundException ex) {
+			logger.error(ex);
 		}
 //		
+		
+	}
+		catch (SQLException ex) {
+			logger.error(ex);
+		
+	}
 		return null;
 	}
 

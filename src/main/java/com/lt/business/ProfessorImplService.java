@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import com.lt.DAO.ProfessorDAOImpl;
 import com.lt.DAO.ProfessorDAOInterface;
@@ -13,7 +14,7 @@ import com.lt.bean.Student;
 
 import net.minidev.json.JSONArray;
 
-
+@Repository
 public class ProfessorImplService implements ProfessorInterface {
 	private static Logger logger = Logger.getLogger(ProfessorImplService.class);
 

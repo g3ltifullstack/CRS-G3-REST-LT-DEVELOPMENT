@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import com.lt.bean.Course;
 import com.lt.bean.Professor;
@@ -18,6 +19,7 @@ import com.lt.exception.StudentNotFoundException;
 import com.lt.utils.CloseConnection;
 import com.lt.utils.DBUtil;
 
+@Repository
 public class ProfessorDAOImpl implements ProfessorDAOInterface, CloseConnection {
 	private static Logger logger = Logger.getLogger(ProfessorDAOImpl.class);
 

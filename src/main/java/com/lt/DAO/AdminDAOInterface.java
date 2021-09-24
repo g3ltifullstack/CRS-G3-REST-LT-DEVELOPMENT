@@ -2,6 +2,8 @@ package com.lt.DAO;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.lt.bean.Admin;
 import com.lt.bean.Course;
 import com.lt.bean.Student;
@@ -10,6 +12,7 @@ import com.lt.exception.CourseFoundException;
 import com.lt.exception.CourseNotFoundException;
 import com.lt.exception.StudentNotFoundForApprovalException;
 
+@Repository
 public interface AdminDAOInterface {
 	public User validateUser(String username, String pass);
 

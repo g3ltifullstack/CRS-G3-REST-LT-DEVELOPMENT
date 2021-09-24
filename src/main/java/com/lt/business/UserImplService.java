@@ -3,6 +3,7 @@ package com.lt.business;
 import java.util.Scanner;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import com.lt.DAO.StudentDAOImpl;
 import com.lt.DAO.UserDAOImpl;
@@ -13,7 +14,7 @@ import com.lt.bean.Student;
 import com.lt.bean.User;
 
 
-
+@Repository
 public class UserImplService implements UserInterface {
 	private static Logger logger = Logger.getLogger(UserImplService.class);
 	UserDAOInterface userDao= new UserDAOImpl();

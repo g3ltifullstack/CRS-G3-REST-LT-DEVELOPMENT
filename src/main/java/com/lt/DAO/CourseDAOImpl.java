@@ -8,12 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import com.lt.bean.Course;
 import com.lt.bean.Student;
 import com.lt.constants.SQLConstantQueries;
 import com.lt.utils.DBUtil;
 
+@Repository
 public class CourseDAOImpl implements CourseDAOInterface {
 
 	// Initializing the logger

@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 //import org.apache.log4j.Logger;
 
 import com.lt.bean.Payment;
@@ -16,6 +18,7 @@ import com.lt.constants.CommonData;
 import com.lt.constants.SQLConstantQueries;
 import com.lt.utils.DBUtil;
 
+@Repository
 public class PayDAOImpl implements PayDAOInterface{
 //	private static Logger logger = Logger.getLogger(PayDaoImpl.class);
 	

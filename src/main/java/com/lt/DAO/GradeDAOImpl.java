@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import com.lt.bean.Course;
 import com.lt.bean.Grade;
@@ -14,6 +15,7 @@ import com.lt.constants.SQLConstantQueries;
 import com.lt.exception.StudentNotFoundException;
 import com.lt.utils.DBUtil;
 
+@Repository
 public class GradeDAOImpl implements GradeDAOInterface {
 	private static Logger logger = Logger.getLogger(GradeDAOImpl.class);
 

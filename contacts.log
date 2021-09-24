@@ -246,3 +246,13 @@
 11:22:20,126 DEBUG ProfessorImplService,http-nio-9092-exec-4:52 - calling studentByName for getting data of Amit
 11:22:20,314  WARN ProfessorDAOImpl,http-nio-9092-exec-4:133 - going to execute resultset object
 11:22:20,332  WARN ProfessorDAOImpl,http-nio-9092-exec-4:135 - resultset executed resultset object
+16:12:22,418  WARN UserRestApi,http-nio-9092-exec-8:36 - user controller method user and password getting username-->akhilesh
+16:12:22,447  WARN UserRestApi,http-nio-9092-exec-8:37 - user controller method user and password getting password-->akhil
+16:12:22,802  WARN UserDAOImpl,http-nio-9092-exec-8:38 - resultset executed if block 
+16:12:22,803  WARN UserRestApi,http-nio-9092-exec-8:40 - after calling method password getting
+16:12:37,781  WARN UserRestApi,http-nio-9092-exec-9:36 - user controller method user and password getting username-->akhilesh
+16:12:37,782  WARN UserRestApi,http-nio-9092-exec-9:37 - user controller method user and password getting password-->ail
+16:12:37,785  WARN UserRestApi,http-nio-9092-exec-9:40 - after calling method password getting
+16:13:58,697  WARN UserRestApi,http-nio-9092-exec-1:36 - user controller method user and password getting username-->akhilesh
+16:13:58,723  WARN UserRestApi,http-nio-9092-exec-1:37 - user controller method user and password getting password-->ail
+16:13:58,826  WARN UserRestApi,http-nio-9092-exec-1:40 - after calling method password getting

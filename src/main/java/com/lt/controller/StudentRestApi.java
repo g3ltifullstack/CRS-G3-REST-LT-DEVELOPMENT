@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.lt.bean.Course;
 import com.lt.bean.Payment;
 import com.lt.bean.Student;
+import com.lt.business.CourseImplService;
 import com.lt.business.CourseInterface;
 import com.lt.business.PaymentInterface;
 import com.lt.business.StudentInterface;
@@ -27,14 +28,16 @@ public class StudentRestApi {
 
 	private static Logger logger = Logger.getLogger(StudentRestApi.class);
 
-	@Autowired
-	CourseInterface courseOperation;
+	/*
+	 * @Autowired CourseInterface courseOperation;
+	 */
 	@Autowired
 	StudentInterface studentOperation;
 	@Autowired
 	PaymentInterface pymt;
 	@Autowired
 	PaymentInterface pymt1;
+	CourseInterface courseOperation =new CourseImplService();
 
 	// Student signup
 

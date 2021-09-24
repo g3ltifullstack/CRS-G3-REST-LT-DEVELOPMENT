@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lt.bean.Professor;
 import com.lt.bean.Student;
 import com.lt.bean.User;
 import com.lt.business.StudentImplService;
 import com.lt.business.StudentInterface;
 import com.lt.business.UserImplService;
 import com.lt.business.UserInterface;
+import com.lt.exception.UserNotFoundException;
 
 @RestController
 @RequestMapping("/CRS")
@@ -35,18 +35,22 @@ public class UserRestApi {
 
 		logger.warn("user controller method user and password getting username-->" + user.getUserName());
 		logger.warn("user controller method user and password getting password-->" + user.getUserPassword());
-
+        try {
 		User checkuser = userInterface.validateUser(user.getUserName(), user.getUserPassword());
 		logger.warn("after calling method password getting");
 		if (checkuser != null) {
 			int profile = checkuser.getRoleId();
 			int userId1 = checkuser.getUserId();
 			// Professor professor=userInterface.fetchProfessor(userId1);
-			if (profile != 0) {
+			if (userId1 != 0) {
 				logger.debug("login successful");
 			} else {
-				logger.error("verify your credential");
+				 throw new UserNotFoundException("provide correct login credential");
 			}
+		}}
+		catch(UserNotFoundException ex){
+			logger.error(ex.getMessage());
+		
 
 		}
 

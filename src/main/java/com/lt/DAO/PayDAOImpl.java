@@ -61,7 +61,7 @@ public class PayDAOImpl implements PayDAOInterface{
 
 	
 	@Override
-	public void payBill(String name, Payment payment) {
+	public void payBill(Payment payment) {
 		
 		Connection connection = DBUtil.getConnection();
 		PreparedStatement stmt= null;
@@ -76,8 +76,9 @@ public class PayDAOImpl implements PayDAOInterface{
 			stmt.setInt(3,payment.getPaymentmode());
 			stmt.setString(4,payment.getCardnumber());
 			stmt.setInt(5,payment.getPaymentpin());
-			stmt.setString(6,name);
+			stmt.setString(6,payment.getStudentname());
 			stmt.setString(7,payment.getPaymentremark());
+			
 			stmt.executeUpdate();
 			
 			ResultSet rs = stmt.getGeneratedKeys();

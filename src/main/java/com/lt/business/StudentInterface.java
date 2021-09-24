@@ -7,14 +7,16 @@ import com.lt.bean.Student;
 
 public interface StudentInterface {
 
-	public Student createStudent(Student student);
+	public boolean createStudent(Student student);
 		
-	public void addCourse(int courseId, Student student);
+	public void addCourse(Student student);
 
-	public void dropCourse(int courseId, Student student);
+	public void dropCourse(Student student);
 
-	public void displaySelectedCourses(Student student);
+	public List<Course> displaySelectedCourses(Student student);
 	
 	public List<Course> viewAllRegisteredCourses();
+
+	
 	
 }

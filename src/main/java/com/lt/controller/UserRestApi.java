@@ -74,8 +74,8 @@ public class UserRestApi {
 		}
 
 		if (uawe != null) {
-			Student studen = studentOperation.createStudent(student);
-			if (studen != null) {
+			boolean studen = studentOperation.createStudent(student);
+			if (studen) {
 				logger.debug("student inserted");
 			} else {
 				logger.error("not inserted ");

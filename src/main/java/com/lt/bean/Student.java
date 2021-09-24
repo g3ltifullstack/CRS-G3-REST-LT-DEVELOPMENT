@@ -14,9 +14,16 @@ public class Student extends User {
 	private boolean paymentstatus;
 	private String password;
 	private int role;
+	private int courseid;
 	
 	
 	
+	public int getCourseid() {
+		return courseid;
+	}
+	public void setCourseid(int courseid) {
+		this.courseid = courseid;
+	}
 	public int getRole() {
 		return role;
 	}

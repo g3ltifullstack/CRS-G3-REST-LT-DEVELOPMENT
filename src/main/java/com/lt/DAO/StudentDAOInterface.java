@@ -6,11 +6,11 @@ import com.lt.bean.Course;
 import com.lt.bean.Student;
 
 public interface StudentDAOInterface {
-	public Student createStudent(Student student);
+	public boolean createStudent(Student student);
 	
-	public void addCourse(int courseId, Student student);
+	public void addCourse(Student student);
 
-	public void dropCourse(int courseId, Student student);
+	public void dropCourse(Student student);
 
 	public List<Course> displaySelectedCourses(Student student);
 	

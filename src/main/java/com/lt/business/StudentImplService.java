@@ -2,40 +2,47 @@ package com.lt.business;
 
 import java.util.List;
 
-import com.lt.DAO.StudentDAOImpl;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.lt.DAO.StudentDAOInterface;
 import com.lt.bean.Course;
 import com.lt.bean.Student;
 
 
+@Service
 public class StudentImplService implements StudentInterface {
-
-	StudentDAOInterface studentDao= new StudentDAOImpl();
+	private static Logger logger = Logger.getLogger(StudentImplService.class);
+    @Autowired
+	StudentDAOInterface studentDao;
 	
-	public Student createStudent(Student student) 
+	public boolean createStudent(Student student) 
 	{
-		studentDao.createStudent(student);
-		return studentDao.createStudent(student); 
+		logger.debug("Calling create student Dao");
+		 boolean abc=studentDao.createStudent(student);
+		return abc;
 	}
 
 	// add course by student against courseId
-	public void addCourse(int courseId, Student student) {
-		studentDao.addCourse(courseId, student);
+	public void addCourse(Student student) {
+		logger.debug("Calling add course dao");
+		studentDao.addCourse(student);
 	}
 
 	// drop course by student against courseId
-	public void dropCourse(int courseId,Student student) {
-		studentDao.dropCourse(courseId, student);
+	public void dropCourse(Student student) {
+		logger.debug("Calling drop course dao");
+		studentDao.dropCourse(student);
 	}
 
 	//display courses selected by student
 
-	public void displaySelectedCourses(Student student) {
-		System.out.println("***********************************LIST OF SELECTED COURSES******************************");	
-		System.out.println("COURSE ID      COURSE NAME               COURSE DESCRIPTION           TIME STAMP             ");
-		List<Course> courses = studentDao.displaySelectedCourses(student);
-		courses.forEach(course -> System.out.println(course.getCourseId()+"               "+course.getCourseName()+"                    "+course.getCourseDescription()+"              "+course.getTime_stamp()));
+	public List<Course> displaySelectedCourses(Student student) {
+		logger.debug("Calling display selected course dao");
 
+		List<Course> courses = studentDao.displaySelectedCourses(student);
+        return courses;
 
 	}
 

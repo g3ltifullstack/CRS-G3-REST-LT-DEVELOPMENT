@@ -14,10 +14,9 @@ import com.lt.bean.Professor;
 import com.lt.bean.Student;
 import com.lt.constants.SQLConstantQueries;
 import com.lt.exception.StudentNotFoundException;
-import com.lt.utils.CloseConnection;
 import com.lt.utils.DBUtil;
 
-public class ProfessorDAOImpl implements ProfessorDAOInterface, CloseConnection {
+public class ProfessorDAOImpl implements ProfessorDAOInterface {
 	private static Logger logger = Logger.getLogger(ProfessorDAOImpl.class);
 
 	Professor pfd = new Professor();

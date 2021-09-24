@@ -17,6 +17,14 @@ import com.lt.business.UserImplService;
 import com.lt.business.UserInterface;
 import com.lt.exception.UserNotFoundException;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 @RestController
 @RequestMapping("/CRS")
 public class UserRestApi {
@@ -27,6 +35,10 @@ public class UserRestApi {
 	UserInterface userInterface = new UserImplService();
 	StudentInterface studentOperation = new StudentImplService();
 
+	@ApiOperation(value = "user login", response = Iterable.class, tags = "verifyCredentials")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success|OK"),
+			@ApiResponse(code = 401, message = "Not Authorized!"), @ApiResponse(code = 403, message = "Forbidden!!!"),
+			@ApiResponse(code = 404, message = "Not Found!!!") })
 	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.POST, value = "/login")
 
 	@ResponseBody
@@ -35,29 +47,36 @@ public class UserRestApi {
 
 		logger.warn("user controller method user and password getting username-->" + user.getUserName());
 		logger.warn("user controller method user and password getting password-->" + user.getUserPassword());
-        try {
-		User checkuser = userInterface.validateUser(user.getUserName(), user.getUserPassword());
-		logger.warn("after calling method password getting");
-		if (checkuser != null) {
-			int profile = checkuser.getRoleId();
-			int userId1 = checkuser.getUserId();
-			// Professor professor=userInterface.fetchProfessor(userId1);
-			if (userId1 != 0) {
-				logger.debug("login successful");
-			} else {
-				 throw new UserNotFoundException("provide correct login credential");
+		String status = null;
+		try {
+			User checkuser = userInterface.validateUser(user.getUserName(), user.getUserPassword());
+			logger.warn("after calling method password getting");
+			if (checkuser != null) {
+				int profile = checkuser.getRoleId();
+				int userId1 = checkuser.getUserId();
+				// Professor professor=userInterface.fetchProfessor(userId1);
+				if (userId1 != 0) {
+					logger.debug("login successful");
+					status = "login verified";
+
+				} else {
+					throw new UserNotFoundException("provide correct login credential");
+				}
 			}
-		}}
-		catch(UserNotFoundException ex){
+		} catch (UserNotFoundException ex) {
 			logger.error(ex.getMessage());
-		
 
 		}
 
-		return null;
+		return status;
 	}
 
 	// UserInterface userOperation=new UserImplService();
+
+	@ApiOperation(value = "user signup", response = Iterable.class, tags = "registation")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success|OK"),
+			@ApiResponse(code = 401, message = "Not Authorized!"), @ApiResponse(code = 403, message = "Forbidden!!!"),
+			@ApiResponse(code = 404, message = "Not Found!!!") })
 
 	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.POST, value = "/signup")
 
@@ -69,9 +88,11 @@ public class UserRestApi {
 		logger.warn("user controller method user and password getting password-->" + student.getPassword());
 		User user = new User();
 		logger.debug("calling user impl--->");
+		String status = null;
 		User uawe = userInterface.createUser(student.getName(), student.getPassword(), student.getRole());
 		if (uawe.getRoleId() != 0) {
 			logger.debug("user created----> ");
+			status = "user created successfully";
 
 		} else {
 			logger.error("user not created");
@@ -81,14 +102,13 @@ public class UserRestApi {
 			boolean studen = studentOperation.createStudent(student);
 			if (studen) {
 				logger.debug("student inserted");
+
 			} else {
 				logger.error("not inserted ");
 			}
 		}
 
-		return "**********Registation completed*********";
+		return status;
 	}
-
-	
 
 }

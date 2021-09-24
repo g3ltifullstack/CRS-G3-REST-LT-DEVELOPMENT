@@ -17,12 +17,21 @@ import com.lt.business.GradesInterface;
 import com.lt.business.ProfessorImplService;
 import com.lt.business.ProfessorInterface;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 @RestController
 @RequestMapping("/professor")
 public class ProfessorRestApi {
 
 	ProfessorInterface proff = new ProfessorImplService();
 	private static Logger logger = Logger.getLogger(ProfessorRestApi.class);
+	
+	@ApiOperation(value = "Professor uploading grade", response = Iterable.class, tags = "provideGread")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success|OK"),
+			@ApiResponse(code = 401, message = "Not Authorized!"), @ApiResponse(code = 403, message = "Forbidden!!!"),
+			@ApiResponse(code = 404, message = "Not Found!!!") })
 
 	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.POST, value = "/gupload")
 
@@ -43,6 +52,11 @@ public class ProfessorRestApi {
 	};
 
 // view student details
+	
+	@ApiOperation(value = "professor getting student details", response = Iterable.class, tags = "getStudentdetails")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success|OK"),
+			@ApiResponse(code = 401, message = "Not Authorized!"), @ApiResponse(code = 403, message = "Forbidden!!!"),
+			@ApiResponse(code = 404, message = "Not Found!!!") })
 
 	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.GET, value = "/rgdetails")
 
@@ -64,6 +78,11 @@ public class ProfessorRestApi {
 
 	}
 	
+	
+	@ApiOperation(value = "professor getting student details by student name", response = Iterable.class, tags = "studentByName")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success|OK"),
+			@ApiResponse(code = 401, message = "Not Authorized!"), @ApiResponse(code = 403, message = "Forbidden!!!"),
+			@ApiResponse(code = 404, message = "Not Found!!!") })
 	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.POST, value = "/stdbyname")
 
 	@ResponseBody
@@ -76,10 +95,15 @@ public class ProfessorRestApi {
 	
 	};
 	
+	@ApiOperation(value = "professor details by professor  name", response = Iterable.class, tags = "professorByName")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success|OK"),
+			@ApiResponse(code = 401, message = "Not Authorized!"), @ApiResponse(code = 403, message = "Forbidden!!!"),
+			@ApiResponse(code = 404, message = "Not Found!!!") })
+	
 	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.POST, value = "/prfbyname")
 
 	@ResponseBody
-	public String studentByName(@RequestBody Professor professor) {
+	public String professorByName(@RequestBody Professor professor) {
 		logger.debug("getting data of -->"+professor.getProfessorName());
 		logger.debug("calling professor impl--->");
 		//GradesInterface gradeOperation= new GradesImplService();

@@ -7,16 +7,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
 import com.lt.bean.Course;
 import com.lt.bean.Student;
+import com.lt.business.CourseImplService;
 import com.lt.constants.SQLConstantQueries;
 import com.lt.utils.DBUtil;
 
 
 @Repository
 public class CourseDAOImpl implements CourseDAOInterface {
+	private static Logger logger = Logger.getLogger(CourseDAOImpl.class);
 	// provide list of courses available for a student to select
 		// mapped with student's with branch and semester
 		public List<Course> displayCourses(Student student) {
@@ -50,7 +53,7 @@ public class CourseDAOImpl implements CourseDAOInterface {
 					course.setCourseId(rs.getInt("courseid"));
 					course.setCourseName(rs.getString("coursename"));
 					course.setCourseDescription(rs.getString("coursedescription"));
-				//	course.setCatalogId(rs.getInt("CatalogId"));
+				    logger.debug("creating list of courses");
 					list.add(course);
 
 				}
@@ -58,11 +61,9 @@ public class CourseDAOImpl implements CourseDAOInterface {
 				return list;
 			}
 			catch(SQLException ex) {
-				
+				logger.debug(ex);
 			}
-//			finally{
-//				closeConnection(connection,stmt);
-//			}
+		
 			
 			return null;
 			

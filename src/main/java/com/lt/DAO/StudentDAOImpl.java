@@ -6,17 +6,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
-
 import com.lt.bean.Course;
 import com.lt.bean.Student;
 import com.lt.constants.SQLConstantQueries;
 import com.lt.utils.DBUtil;
+
+
 @Repository
 public class StudentDAOImpl implements StudentDAOInterface {
+	private static Logger logger = Logger.getLogger(StudentDAOImpl.class);
 
-	public void addCourse(Course course, Student student) {
+	public void addCourse(Student student) {
 		//Establishing the connection
 		Connection connection = DBUtil.getConnection();
 		PreparedStatement stmt= null;
@@ -28,11 +30,11 @@ public class StudentDAOImpl implements StudentDAOInterface {
 			
 
 			stmt.setInt(1, student.getStudentId());
-			stmt.setInt(2, course.getCourseId());
+			stmt.setInt(2, student.getCourseid());
 
 			//Executing query
 			stmt.executeUpdate();
-//			System.out.println("Course with courseId="+courseId+" added!");
+			logger.debug("Course with courseId="+student.getCourseid()+" added!");
 
 		} catch (SQLException ex) {
 			
@@ -42,7 +44,7 @@ public class StudentDAOImpl implements StudentDAOInterface {
 	}
 
 	
-	public void dropCourse(Course course, Student student) {
+	public void dropCourse(Student student) {
 		//Establishing the connection
 				Connection connection = DBUtil.getConnection();
 				PreparedStatement stmt= null;
@@ -53,12 +55,12 @@ public class StudentDAOImpl implements StudentDAOInterface {
 					
 
 					stmt.setInt(1, student.getStudentId());
-					stmt.setInt(2, course.getCourseId());
+					stmt.setInt(2, student.getCourseid());
 					//Executing query
 					int rs = stmt.executeUpdate();
 					if(rs>0)
 					{
-						System.out.println("Course dropped !");
+						logger.debug("Course with courseId="+student.getCourseid()+" dropped !");
 						return;
 
 					}
@@ -66,7 +68,7 @@ public class StudentDAOImpl implements StudentDAOInterface {
 					
 				}
 				
-				System.out.println("Course not found !");
+				
 		
 	}
 
@@ -96,7 +98,7 @@ public class StudentDAOImpl implements StudentDAOInterface {
 
 			}
 
-			//returning list of courses
+			logger.debug("Returning list of courses");
 			return list;
 		}
 		catch(SQLException ex) {
@@ -131,7 +133,7 @@ public Student createStudent(Student student) {
                    {
                 	  userid= rs.getInt("userid");
                    }
-                    System.out.println(student.getName());
+                    
 
 					
 				}
@@ -161,26 +163,11 @@ public Student createStudent(Student student) {
 				stmt.setLong(3, phone);
                 stmt.setInt(4, semester);
 				stmt.setString(5, branch);
-				stmt.setInt(6, userid);
-				
-				
-				//Executing query
+				stmt.setInt(6, userid);			
+				logger.debug("Executing insert student");
 				stmt.executeUpdate();
-//				System.out.println("rs1 ");
-//				ResultSet rs = stmt.executeQuery();
-//				System.out.println("rs2 ");
+				
 
-				 
-
-	            
-//	                if (rs.next()) {
-//	                	System.out.println("user inserted ");
-	//
-	// 
-	//
-//	                } else {
-//	                    System.out.println("not inserted");
-//	                }
 //	           
 
 

@@ -1,4 +1,4 @@
-package com.lt.client;
+package com.lt.controller;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ import com.lt.business.GradesInterface;
 import com.lt.business.UserImplService;
 import com.lt.business.UserInterface;
 
-public class AdminClient {
+public class AdminRestApi {
 
 	public void adminMenu() {
 		UserInterface admin = new UserImplService();

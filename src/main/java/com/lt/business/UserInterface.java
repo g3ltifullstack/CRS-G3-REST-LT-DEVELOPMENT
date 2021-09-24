@@ -25,6 +25,8 @@ public interface UserInterface {
 	public void signUp();
 	
 	public void createStudent(Student student) ;
-	public  User createUser(String name, String password,int roleid);
+	public  User createUser(User user);
+
+	
 }
 

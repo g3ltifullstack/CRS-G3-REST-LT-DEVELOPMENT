@@ -1,7 +1,12 @@
 package com.lt.bean;
 
-public class Student extends User {
+import org.springframework.beans.factory.annotation.Autowired;
 
+public class Student extends User {
+	
+	@Autowired
+	
+    
 	private int studentId;
 	private String name;
 	private String gender;
@@ -9,6 +14,13 @@ public class Student extends User {
 	private int semester;
 	private String branch;
 	private int userid;
+	private int courseid;
+	public int getCourseid() {
+		return courseid;
+	}
+	public void setCourseid(int courseid) {
+		this.courseid = courseid;
+	}
 	//private boolean registrationStatus;
 	private boolean isApproved;
 	private boolean paymentstatus;

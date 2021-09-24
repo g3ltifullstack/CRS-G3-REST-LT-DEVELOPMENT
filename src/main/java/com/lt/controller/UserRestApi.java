@@ -1,4 +1,4 @@
-package com.lt.client;
+package com.lt.controller;
 
 
 
@@ -11,10 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.lt.client.AdminClient;
-import com.lt.client.ProfessorClient;
-import com.lt.client.StudentClientAPI;
+
 import com.lt.business.UserInterface;
+import com.lt.controller.AdminRestApi;
+import com.lt.controller.ProfessorRestApi;
+import com.lt.controller.StudentRestApi;
 import com.lt.bean.Admin;
 import com.lt.bean.Professor;
 import com.lt.bean.Student;
@@ -27,7 +28,7 @@ import org.apache.log4j.Logger;
 
 
 @RestController
-public class UserClientAPI {
+public class UserRestApi {
 	@Autowired
 	UserInterface userOperation;
 	@Autowired
@@ -62,6 +63,14 @@ public class UserClientAPI {
               }
               
           }
+	
+	@RequestMapping(produces = MediaType.APPLICATION_JSON, method =RequestMethod.POST, value = "/usersignup")
+    @ResponseBody
+	public String createUsers(@RequestBody User user){
+		userOperation.createUser(user);
+		return "User signup successful";
+	}
+        
 	
 }
 

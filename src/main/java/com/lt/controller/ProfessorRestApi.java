@@ -1,4 +1,4 @@
-package com.lt.client;
+package com.lt.controller;
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ import com.lt.business.ProfessorInterface;
 
 
 
-public class ProfessorClient {
+public class ProfessorRestApi {
 	
 	
 		CourseInterface courseOperation= new CourseImplService();

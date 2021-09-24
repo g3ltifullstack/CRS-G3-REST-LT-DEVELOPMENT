@@ -1,3 +1,4 @@
+package com.lt.controller;
 /*package com.lt.client;
 
 import java.util.Scanner;

@@ -1,11 +1,14 @@
 package com.lt.DAO;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import com.lt.bean.Admin;
+import com.lt.bean.Course;
 import com.lt.bean.Student;
 import com.lt.bean.User;
 import com.lt.constants.SQLConstantQueries;
+import com.lt.exception.CourseFoundException;
 import com.lt.exception.StudentNotFoundForApprovalException;
 import com.lt.utils.DBUtil;
 
@@ -16,6 +19,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class AdminDAOImpl implements AdminDAOInterface {
 	private static Logger logger = Logger.getLogger(AdminDAOImpl.class);
 
@@ -61,39 +65,40 @@ public class AdminDAOImpl implements AdminDAOInterface {
 
 	// * // fetch admin from admin database against admin Id
 	@Override
-	public Admin fetchAdmin(int adminid) {
+	public List<Admin> fetchAdmin(Admin admin) {
+		List<Admin> list = new ArrayList<Admin>();
 
 		Connection connection = DBUtil.getConnection();
 		PreparedStatement stmt = null;
 
 		try {
 			// Declaring prepared statement
-			stmt = null;
 			stmt = connection.prepareStatement(SQLConstantQueries.FETCH_ADMIN);
-			stmt.setInt(1, adminid);
+			stmt.setString(1, admin.getName());
 
 			ResultSet rs = stmt.executeQuery();
 
 			if (rs.next()) {
-				Admin admin = new Admin();
-				admin.setAdminId(adminid);
+				System.out.println("Entering and setting admin data");
+				admin.setAdminId(rs.getInt("adminid"));
 				admin.setName(rs.getString("name"));
 				admin.setPhoneNumber(rs.getLong("phonenumber"));
 				admin.setGender(rs.getString("gender"));
+				list.add(admin);
 
-				return admin;
 			}
 
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}
 
-		return null;
+		return list;
 	}
 
 	// create a new admin
 	@Override
-	public void createAdmin(Admin admin) {
+	public boolean createAdmin(Admin admin) {
+		boolean isCreated =false;
 
 		// Establishing the connection
 		System.out.println("establishing connection");
@@ -114,14 +119,15 @@ public class AdminDAOImpl implements AdminDAOInterface {
 			stmt.setString(3, gender);
 			stmt.setLong(4, phoneNo);
 			stmt.setInt(5, userid);
-
 			// Executing query
 			stmt.executeUpdate();
+			isCreated=true;
 			logger.info(("Admin" + " added!"));
 
 		} catch (SQLException ex) {
 			ex.getMessage();
 		}
+		return isCreated;
 	}
 
 	// update admin against adminId
@@ -268,4 +274,64 @@ public class AdminDAOImpl implements AdminDAOInterface {
 
 	}
 
+	@Override
+	public void addCourse(Course course) throws CourseFoundException {
+		Connection connection = DBUtil.getConnection();
+
+		PreparedStatement stmt = null;
+		try {
+			stmt = connection.prepareStatement(SQLConstantQueries.INSERT_COURSE);
+			int courseID = course.getCourseId();
+			String title = course.getCourseName();
+			String description = course.getCourseDescription();
+			int semester = course.getSemester();
+			String branch = course.getBranch();
+
+			stmt.setInt(1, courseID);
+			stmt.setString(2, title);
+			stmt.setString(3, description);
+			stmt.setInt(4, semester);
+			stmt.setString(5, branch);
+
+			// Executing query
+			stmt.executeUpdate();
+			logger.info("Course added!");
+		} catch (SQLException se) {
+
+			logger.error(se.getMessage());
+			throw new CourseFoundException(course.getCourseId());
+
+		}
+	}
+	// provide details of all admins
+		@Override
+		public List<Admin> displayAdmins(Admin admin) {
+
+			Connection connection = DBUtil.getConnection();
+			PreparedStatement stmt = null;
+			List<Admin> list = new ArrayList<Admin>();
+
+			try {
+				stmt = connection.prepareStatement(SQLConstantQueries.DISPLAY_ADMINS);
+
+				ResultSet rs = stmt.executeQuery();
+
+				logger.info("Display admins --");
+				// Creating ArrayList of admin
+				while (rs.next()) {
+					admin.setAdminId(rs.getInt("adminid"));
+					admin.setName(rs.getString("name"));
+					admin.setGender(rs.getString("gender"));
+					admin.setPhoneNumber(rs.getLong("phonenumber"));
+					admin.setUserid(rs.getInt("userid"));
+					list.add(admin);
+				}
+
+				// returning list of admins
+			} catch (SQLException ex) {
+				ex.getMessage();
+			}
+
+			return list;
+		}
 }

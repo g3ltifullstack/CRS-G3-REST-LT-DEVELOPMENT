@@ -116,32 +116,21 @@ public class UserImplService implements UserInterface {
 	}
 		
 		
-//		
-//		if (userId != 0 && userName != null && password != null) {
-//			System.out.println("Got it");
-//			user.setUserId(userId);
-//			user.setUserName(userName);
-//			user.setUserPassword(password);
-//			System.out.println("end reached");
-//
-//		}
-//		System.out.println("limit");
-//		sc.close();
-//
-//	}
+	@Override
+	public boolean updateUser(User user) {
+		
+		System.out.println("json");
+		boolean adminList = userDao.updateUser(user);
+		return adminList;
+	}
 
-//	@Override
-//	public void login() {
-//		System.out.println("Enter userName");
-//		Scanner sc = new Scanner(System.in);
-//		String userName = sc.next();
-//		System.out.println("Enter password");
-//		String password = sc.next();
-//		if (userName != null && password != null) {
-//			user.setUserName(userName);
-//			user.setUserPassword(password);
-//
-//		}
+	@Override
+	public boolean deleteUser(User user) {
+		System.out.println("json");
+		boolean adminList = userDao.deleteUser(user);
+		return adminList;
+	}
+
 		
 
 	

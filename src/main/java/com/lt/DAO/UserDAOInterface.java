@@ -21,5 +21,8 @@ public interface UserDAOInterface {
 	 public List<Student> displayStudents();
 	 public List<Professor> displayProfessors();
 	 public List<Admin> displayAdmins();
+		public boolean updateUser(User user);
+		
+		public boolean deleteUser(User user);
 	 //check delete user 
 }

@@ -13,7 +13,6 @@ import com.lt.bean.Admin;
 import com.lt.bean.Professor;
 import com.lt.bean.Student;
 import com.lt.bean.User;
-import com.lt.business.UserImplService;
 import com.lt.constants.SQLConstantQueries;
 import com.lt.utils.DBUtil;
 
@@ -200,6 +199,65 @@ public User createUser(User user) {
 	public List<Admin> displayAdmins() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public boolean updateUser(User user) {
+		boolean isUpdated = false;
+		// Establishing the connection
+		Connection connection = DBUtil.getConnection();
+		PreparedStatement stmt = null;
+
+		try {
+			// Declaring prepared statement and executing query
+			logger.info("Updating the user and executing it");
+			stmt = connection.prepareStatement(SQLConstantQueries.UPDATE_USER);
+			int userId1 = user.getUserId();
+			String username = user.getUserName();
+			String password = user.getUserPassword();
+			int roleId = user.getRoleId();
+
+			stmt.setString(1, username);
+			stmt.setString(2, password);
+			stmt.setInt(3, roleId);
+			stmt.setInt(4, userId1);
+
+			// Executing query
+			stmt.executeUpdate();
+			isUpdated = true;
+
+		} catch (SQLException ex) {
+			ex.getMessage();
+		}
+		return isUpdated;
+
+	}
+	
+	@Override
+	public boolean deleteUser(User user) {
+		// Establishing the connection
+		boolean isDeleted = false;
+		Connection connection = DBUtil.getConnection();
+		try {
+
+			// Establishing the connection
+			PreparedStatement stmt = null;
+
+			stmt = connection.prepareStatement(SQLConstantQueries.DELETE_USER);
+			stmt.setInt(1, user.getUserId());
+			// Executing query
+			int rs = stmt.executeUpdate();
+			if (rs > 0) {
+				isDeleted=true;
+				return isDeleted;
+			}
+//							else 
+//							throw new UserNotFoundException();
+
+		} catch (SQLException ex) {
+			ex.getMessage();
+		}
+		return isDeleted;
 	}
 
 }

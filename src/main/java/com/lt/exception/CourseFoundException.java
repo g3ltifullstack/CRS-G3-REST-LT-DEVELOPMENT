@@ -5,32 +5,28 @@ public class CourseFoundException extends Exception {
 		 * 
 		 */
 	private static final long serialVersionUID = 1L;
-	private String courseCode;
+	private int courseId;
 
-	/***
-	 * Constructor
-	 * 
-	 * @param courseCode
-	 */
-	public CourseFoundException(String courseCode) {
-		this.courseCode = courseCode;
+	public int getCourseId() {
+		return courseId;
 	}
 
-	/**
-	 * Getter method
-	 * 
-	 * @return course code
-	 */
-	public String getCourseCode() {
-		return courseCode;
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
 	}
 
-	/**
-	 * Message returned when exception is thrown
-	 */
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
-	public String getMessage() {
-		return "Course with courseCode: " + courseCode + " already present in catalog.";
+	public String toString() {
+		return "CourseFoundException [courseId=" + courseId + "]";
+	}
+
+	public CourseFoundException(int courseId) {
+		super();
+		this.courseId = courseId;
 	}
 
 }

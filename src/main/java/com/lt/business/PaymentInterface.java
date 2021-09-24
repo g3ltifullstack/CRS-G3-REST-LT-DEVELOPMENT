@@ -7,7 +7,7 @@ import com.lt.bean.Student;
 
 public interface PaymentInterface {
 	public boolean  payment(Payment paymnt);
-	public List<Payment> viewreceipt(Student student);
+	public String viewreceipt(Student student);
 	
 
 }

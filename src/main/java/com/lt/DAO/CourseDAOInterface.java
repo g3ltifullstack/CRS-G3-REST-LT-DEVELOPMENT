@@ -14,7 +14,7 @@ public interface CourseDAOInterface {
 	 * 
 	 * @param course
 	 */
-	public void insertCourse(Course course);
+	public boolean insertCourse(Course course);
 
 	/**
 	 * Delete Course using SQL commands
@@ -22,6 +22,6 @@ public interface CourseDAOInterface {
 	 * @param courseCode
 	 * @throws CourseNotFoundException
 	 */
-	public void deleteCourse(int courseId) throws CourseNotFoundException;
+	public boolean deleteCourse(Course course);
 
 }

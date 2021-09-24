@@ -103,9 +103,9 @@ public class StudentRestApi {
 	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.GET, value = "/ViewReceipt")
 	@ResponseBody
 	public String receipt(@RequestBody Student student) {
-		List<Payment> list2 = new ArrayList<>();
-		list2 = pymt1.viewreceipt(student);
-		String jsonstr2 = JSONArray.toJSONString(list2);
+	
+		String jsonstr2 = pymt1.viewreceipt(student);
+		;
 		return jsonstr2;
 
 	}

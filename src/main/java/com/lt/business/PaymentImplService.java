@@ -13,6 +13,8 @@ import com.lt.DAO.PayDAOImpl;
 import com.lt.DAO.PayDAOInterface;
 import com.lt.bean.Payment;
 import com.lt.bean.Student;
+
+import net.minidev.json.JSONArray;
 @Service
 public class PaymentImplService implements PaymentInterface {
 
@@ -39,14 +41,15 @@ public class PaymentImplService implements PaymentInterface {
 
 
 	@Override
-	public List<Payment> viewreceipt(Student student) {
+	public String viewreceipt(Student student) {
 		List <Payment> receipt=new ArrayList();
 		PayDAOInterface paydao=new PayDAOImpl();
 		receipt= paydao.viewreceipt(student.getName());
+		String jsonStr = JSONArray.toJSONString(receipt);
 //		for (Payment payment : receipt) {
 //			logger.info("payment id="+payment.getPaymentId()+"student name="+payment.getStudentname()+" amount="
 //					+payment.getAmount()+" payment status"+payment.getPaymentstatus()+" payment mode ="+payment.getPaymentmode());
-		return receipt;
+		return jsonStr;
 			
 		}
 		

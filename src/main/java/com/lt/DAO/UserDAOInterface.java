@@ -34,8 +34,6 @@ public interface UserDAOInterface {
 	public List<Professor> displayProfessors();
 
 	public boolean updateUser(User user);
-
-	public List<Admin> displayAdmins(Admin admin);
 	
 	public boolean deleteUser(User user);
 

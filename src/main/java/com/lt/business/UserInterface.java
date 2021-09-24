@@ -15,28 +15,26 @@ public interface UserInterface {
 	public User validateUser(String username, String password);
 
 	public Student fetchStudent(int studentId);
+
 	/**
 	 * @param adminId
 	 * @return
 	 */
-//	public Admin fetchAdmin(int adminId);
 	public Professor fetchProfessor(int professorId);
 //	public void displayStudents();
 
 	/**
-	 * Display Admins
+	 * Login
 	 */
-	public String displayAdmins(Admin admin);
+	public void login();
 
-	/**
-	 * Login 
-	 */
-	public void login();	
 	public void signUp();
+
 	public boolean updateUser(User user);
+
 	public boolean deleteUser(User user);
 
-	public void createStudent(Student student) ;
-	public  User createUser(String name, String password,int roleid);
-}
+	public void createStudent(Student student);
 
+	public User createUser(String name, String password, int roleid);
+}

@@ -23,5 +23,4 @@ public interface CourseDAOInterface {
 	 * @throws CourseNotFoundException
 	 */
 	public boolean deleteCourse(Course course);
-
 }

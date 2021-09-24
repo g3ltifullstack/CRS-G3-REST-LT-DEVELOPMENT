@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
 
 import com.lt.DAO.AdminDAOImpl;
 import com.lt.DAO.AdminDAOInterface;
@@ -17,9 +18,10 @@ import com.lt.bean.User;
 
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
-
+@Service
 public class UserImplService extends User implements UserInterface {
 	UserDAOInterface userDao = new UserDAOImpl();
+	AdminDAOInterface adminDAO = new AdminDAOImpl(); 
 	User user = new User();
 	private static Logger logger = Logger.getLogger(UserImplService.class);
 	// validating users by checking their credentials
@@ -53,14 +55,7 @@ public class UserImplService extends User implements UserInterface {
 
 	}
 
-	public String displayAdmins(Admin admin) {
-		List<Admin> adminList = new ArrayList<>();
-		System.out.println("json");
-		adminList = userDao.displayAdmins(admin);
-		String jsonStr = JSONArray.toJSONString(adminList);
-		System.out.println("Print json string "+jsonStr);
-		return jsonStr;
-	}
+	
 
 	public void signUp() {
 

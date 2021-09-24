@@ -128,7 +128,7 @@ public class AdminRestApi {
 	@ResponseBody
 	public String displayAdmins(@RequestBody Admin admin) throws SQLException {
 
-		UserInterface adminDAO1 = new UserImplService();
+		AdminInterface adminDAO1 = new AdminImplService();
 
 		System.out.println("Print admin name -- " + admin.getName());
 		System.out.println("fetch admin");

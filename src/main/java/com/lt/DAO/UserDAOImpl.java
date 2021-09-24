@@ -161,37 +161,7 @@ public class UserDAOImpl implements UserDAOInterface {
 
 	}
 
-	// provide details of all admins
-	@Override
-	public List<Admin> displayAdmins(Admin admin) {
-
-		Connection connection = DBUtil.getConnection();
-		PreparedStatement stmt = null;
-		List<Admin> list = new ArrayList<Admin>();
-
-		try {
-			stmt = connection.prepareStatement(SQLConstantQueries.DISPLAY_ADMINS);
-
-			ResultSet rs = stmt.executeQuery();
-
-			logger.info("Display admins --");
-			// Creating ArrayList of admin
-			while (rs.next()) {
-				admin.setAdminId(rs.getInt("adminid"));
-				admin.setName(rs.getString("name"));
-				admin.setGender(rs.getString("gender"));
-				admin.setPhoneNumber(rs.getLong("phonenumber"));
-				admin.setUserid(rs.getInt("userid"));
-				list.add(admin);
-			}
-
-			// returning list of admins
-		} catch (SQLException ex) {
-			ex.getMessage();
-		}
-
-		return list;
-	}
+	
 
 	@Override
 	public void createStudent(Student student) {

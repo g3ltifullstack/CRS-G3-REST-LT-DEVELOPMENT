@@ -303,55 +303,35 @@ public class AdminDAOImpl implements AdminDAOInterface {
 
 		}
 	}
+	// provide details of all admins
+		@Override
+		public List<Admin> displayAdmins(Admin admin) {
 
-//	@Override
-//	public List<Course> viewCourses(Course course) {
-//		//Establishing the connection
-//		Connection connection= DBUtil.getConnection();
-//
-//		//Declaring prepared statement and executing query
-//		PreparedStatement stmt= null;
-//		 int semester=student.getSemester();
-//		 
-//		 String branch=student.getBranch();
-//		
-//		try {
-//
-//			stmt= connection.prepareStatement(SQLConstantQueries.DISPLAY_COURSES);
-//			stmt.setInt(1, semester);
-//			stmt.setString(2,branch);
-//
-//			ResultSet rs = stmt.executeQuery();
-//
-//			List<Course> list= new ArrayList<Course>();
-//
-//			//Creating ArrayList of Course
-//			while(rs.next())
-//			{
-//				
-//				Course course = new Course();
-//				course.setBranch(branch);
-//				course.setSemester(semester);
-//				course.setCourseId(rs.getInt("courseid"));
-//				course.setCourseName(rs.getString("coursename"));
-//				course.setCourseDescription(rs.getString("coursedescription"));
-//			//	course.setCatalogId(rs.getInt("CatalogId"));
-//				list.add(course);
-//
-//			}
-//
-//			return list;
-//		}
-//		catch(SQLException ex) {
-//			
-//		}
-////		finally{
-////			closeConnection(connection,stmt);
-////		}
-//		
-//		return null;
-//		
-//	}
-//	}
+			Connection connection = DBUtil.getConnection();
+			PreparedStatement stmt = null;
+			List<Admin> list = new ArrayList<Admin>();
 
+			try {
+				stmt = connection.prepareStatement(SQLConstantQueries.DISPLAY_ADMINS);
+
+				ResultSet rs = stmt.executeQuery();
+
+				logger.info("Display admins --");
+				// Creating ArrayList of admin
+				while (rs.next()) {
+					admin.setAdminId(rs.getInt("adminid"));
+					admin.setName(rs.getString("name"));
+					admin.setGender(rs.getString("gender"));
+					admin.setPhoneNumber(rs.getLong("phonenumber"));
+					admin.setUserid(rs.getInt("userid"));
+					list.add(admin);
+				}
+
+				// returning list of admins
+			} catch (SQLException ex) {
+				ex.getMessage();
+			}
+
+			return list;
+		}
 }

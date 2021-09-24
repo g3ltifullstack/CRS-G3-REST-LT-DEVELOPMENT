@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import com.lt.bean.Admin;
 import com.lt.bean.Professor;
@@ -15,7 +16,7 @@ import com.lt.bean.Student;
 import com.lt.bean.User;
 import com.lt.constants.SQLConstantQueries;
 import com.lt.utils.DBUtil;
-
+@Repository
 public class UserDAOImpl implements UserDAOInterface {
 	private static Logger logger = Logger.getLogger(UserDAOImpl.class);
 
